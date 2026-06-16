@@ -1,0 +1,19 @@
+.task-container {
+    width: auto;
+    margin: 20px 0px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(236, 72, 153, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    min-width: 100px;
+    box-shadow: 0 8px 32px rgba(236, 72, 153, 0.1), 0 2px 8px rgba(236, 72, 153, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:linear-gradient(135deg, #db2777, #ec4899);
+}
