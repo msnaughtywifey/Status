@@ -70,12 +70,12 @@ if (title) {
 
 if (subTitle) {
     subTitle.style.color = isBusinessHours ? "" : "rgba(255, 255, 255, 0.5)";
-    subTitle.innerHTML = isBusinessHours ? "<p>✦ Now online at your disposal ✦</p>" : "<p>✦ Now offline ✦</p>";
+    subTitle.innerHTML = isBusinessHours ? "<p>✦ Now online at your disposal 18+✦</p>" : "<p>✦ Now offline ✦</p>";
 }
 
 if (bio) {
     bio.style.color = isBusinessHours ? "" : "white";
-    bio.innerHTML = isBusinessHours ? "Im here crafting a new experience everyday just for you! Something to do with a special reward. Chat with me below!" : "<p>Check in tomorrow 9am-6pm PST</p><p>Time left till next task</p><div id='timer'>00:00:00</div>";
+    bio.innerHTML = isBusinessHours ? "Im here crafting a new experience everyday just for you! Something to do with a special reward 18+. Chat with me below!" : "<p>18+ Check in tomorrow 9am-6pm PST</p><p>Time left till next task</p><div id='timer'>00:00:00</div>";
 }
 
 if (socialColor.length > 0) { // Safely check if elements exist in the collection
