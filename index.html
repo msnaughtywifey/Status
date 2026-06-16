@@ -16,6 +16,21 @@
     <!-- The image attached to that specific link preview -->
     <meta property="og:image" content="https://pbs.twimg.com/profile_images/2057489128883892224/DrUyBrsI_400x400.jpg">
 
+    <style>
+    /* Fullscreen overlay overlaying the main content */
+    #age-gate {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: #111; color: #fff;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      z-index: 9999; font-family: sans-serif;
+    }
+    button {
+      padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -48,22 +63,38 @@
     <!-- Main Content -->
     <div class="container">
 
-        <form id="ageForm">
-  <label for="birthdate">Enter your birthdate:</label>
-  <input type="date" id="birthdate" required>
-  <button type="submit">Submit</button>
-</form>
+        <!-- Age Gate Overlay -->
+  <div id="age-gate">
+    <h1>Are you 18 or older?</h1>
+    <p>You must be of legal age to view this content.</p>
+    <div>
+      <button onclick="grantAccess()">Yes, I am 18+</button>
+      <button onclick="denyAccess()">No, exit</button>
+    </div>
+  </div>
 
-<script>
-  // Calculate the date 18 years ago today
-  const today = new Date();
-  const maxYear = today.getFullYear() - 18;
-  const maxMonth = String(today.getMonth() + 1).padStart(2, '0');
-  const maxDay = String(today.getDate()).padStart(2, '0');
-  
-  // Set the max attribute on the input
-  document.getElementById('birthdate').max = `${maxYear}-${maxMonth}-${maxDay}`;
-</script>
+  <!-- Main Content Hidden Behind Gate -->
+  <main>
+    <h1>Welcome to the adult section</h1>
+    <p>This content is restricted.</p>
+  </main>
+
+  <script>
+    // Check if user already passed validation in this session
+    if (sessionStorage.getItem('adult_verified') === 'true') {
+      document.getElementById('age-gate').style.display = 'none';
+    }
+
+    function grantAccess() {
+      sessionStorage.setItem('adult_verified', 'true');
+      document.getElementById('age-gate').style.display = 'none';
+    }
+
+    function denyAccess() {
+      alert("You are not allowed to view this content.");
+      window.location.href = "https://google.com"; // Redirect away
+    }
+  </script>
 
         
         <!-- Avatar -->
