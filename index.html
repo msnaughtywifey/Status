@@ -47,6 +47,25 @@
     </div>
     <!-- Main Content -->
     <div class="container">
+
+        <form id="ageForm">
+  <label for="birthdate">Enter your birthdate:</label>
+  <input type="date" id="birthdate" required>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  // Calculate the date 18 years ago today
+  const today = new Date();
+  const maxYear = today.getFullYear() - 18;
+  const maxMonth = String(today.getMonth() + 1).padStart(2, '0');
+  const maxDay = String(today.getDate()).padStart(2, '0');
+  
+  // Set the max attribute on the input
+  document.getElementById('birthdate').max = `${maxYear}-${maxMonth}-${maxDay}`;
+</script>
+
+        
         <!-- Avatar -->
         <div class="avatar-wrapper">
             <div class="avatar-ring">
