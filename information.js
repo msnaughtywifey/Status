@@ -26,7 +26,7 @@ socialsLinks.innerHTML = activeSocials.join(' ');
 const currentHour = new Date().getHours();
 
 // Evaluates to true only between 9:00 AM and 2:59 PM
-const isBusinessHours = currentHour >= 9 && currentHour <20;
+const isBusinessHours = currentHour >= 9 && currentHour <17;
 
 const bodyElement = document.querySelector('body');
 
