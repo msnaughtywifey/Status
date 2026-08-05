@@ -10,7 +10,7 @@ title.innerHTML = profileName;
 const socialsLinks = document.querySelector('.social-links');
 
 const socialLinks = [
-  { cashapp: "$msnaughtywifey", snapchat: "@msthicc1", x: "MsNaughtyWifey", ig: "honey_baby0403" }
+  { cashapp: "$msnaughtywifey", x: "MsNaughtyWifey" }
 ];
 
 // Map over the array data dynamically instead of relying on an undeclared 'item' variable
